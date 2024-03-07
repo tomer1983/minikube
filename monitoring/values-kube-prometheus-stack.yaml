@@ -525,7 +525,7 @@ alertmanager:
 
     ## Service type
     ##
-    type: ClusterIP
+    type: LoadBalancer
 
   ## Configuration for creating a separate Service for each statefulset Alertmanager replica
   ##
@@ -744,7 +744,7 @@ alertmanager:
     ## Time duration Alertmanager shall retain data for. Default is '120h', and must match the regular expression
     ## [0-9]+(ms|s|m|h) (milliseconds seconds minutes hours).
     ##
-    retention: 120h
+    retention: 1h
 
     ## Storage is the definition of how storage will be used by the Alertmanager instances.
     ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/storage.md
@@ -948,11 +948,11 @@ grafana:
 
   ## ForceDeployDatasources Create datasource configmap even if grafana deployment has been disabled
   ##
-  forceDeployDatasources: false
+  forceDeployDatasources: true
 
   ## ForceDeployDashboard Create dashboard configmap even if grafana deployment has been disabled
   ##
-  forceDeployDashboards: false
+  forceDeployDashboards: true
 
   ## Deploy default dashboards
   ##
@@ -2052,7 +2052,7 @@ kube-state-metrics:
       #   action: replace
 
   selfMonitor:
-    enabled: false
+    enabled: true
 
 ## Deploy node exporter as a daemonset to all nodes
 ##
@@ -3015,7 +3015,7 @@ prometheus:
 
     ## Service type
     ##
-    type: ClusterIP
+    type: LoadBalancer
 
     ## Additional ports to open for Prometheus service
     ##
@@ -3326,7 +3326,7 @@ prometheus:
     ## This is disabled by default.
     ## ref: https://prometheus.io/docs/prometheus/latest/querying/api/#tsdb-admin-apis
     ##
-    enableAdminAPI: false
+    enableAdminAPI: true
 
     ## Sets version of Prometheus overriding the Prometheus version as derived
     ## from the image tag. Useful in cases where the tag does not follow semver v2.
@@ -3565,7 +3565,7 @@ prometheus:
 
     ## How long to retain metrics
     ##
-    retention: 10d
+    retention: 1d
 
     ## Maximum size of metrics
     ##
