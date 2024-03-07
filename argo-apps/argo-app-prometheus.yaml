@@ -11,9 +11,9 @@ spec:
     repoURL: https://prometheus-community.github.io/helm-charts
     targetRevision: 56.21.3
     helm:
-      releaseName: kube-prometheus-stack
+      releaseName: prometheus-community/kube-prometheus-stack
       valueFiles:
-      - values-kube-prometheus-stack.yaml  
+      - monitoring/values-kube-prometheus-stack.yaml  
   destination:
     server: "https://kubernetes.default.svc"
     namespace: monitoring
