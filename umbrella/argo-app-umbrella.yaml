@@ -15,7 +15,7 @@ metadata:
     name: platform
 spec:
   # The project the application belongs to.
-  project: platform
+  project: default
 
   # Source of the application manifests
   source:
