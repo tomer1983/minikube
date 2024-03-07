@@ -12,8 +12,8 @@ spec:
     targetRevision: 56.21.3
     helm:
       releaseName: prometheus-community/kube-prometheus-stack
-      valueFiles:
-      - monitoring/values-kube-prometheus-stack.yaml  
+      # valueFiles:
+      # - monitoring/values-kube-prometheus-stack.yaml  
   destination:
     server: "https://kubernetes.default.svc"
     namespace: monitoring
