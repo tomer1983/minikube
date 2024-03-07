@@ -15,7 +15,7 @@ spec:
         valueFiles:
         - $git/monitoring/values-kube-prometheus-stack.yaml  
     - repoURL: 'https://github.com/tomer1983/minikube.git'
-      targetRevision: head
+      targetRevision: HEAD
       ref: git
   destination:
     server: "https://kubernetes.default.svc"
