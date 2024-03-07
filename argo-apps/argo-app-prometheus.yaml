@@ -13,10 +13,10 @@ spec:
       helm:
         releaseName: kube-prometheus-stack
         valueFiles:
-        - $path/monitoring/values-kube-prometheus-stack.yaml  
+        - $git/monitoring/values-kube-prometheus-stack.yaml  
     - repoURL: 'https://github.com/tomer1983/minikube.git'
       targetRevision: head
-      ref: path
+      ref: git
   destination:
     server: "https://kubernetes.default.svc"
     namespace: monitoring
