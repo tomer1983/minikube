@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: kube-prometheus-stack
-  namespace: monitoring
+  namespace: argocd
 spec:
   project: monitoring
   source:
@@ -15,4 +15,4 @@ spec:
       - values-kube-prometheus-stack.yaml  
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: kubeseal
+    namespace: monitoring
