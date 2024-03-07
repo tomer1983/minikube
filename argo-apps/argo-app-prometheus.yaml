@@ -4,7 +4,7 @@ metadata:
   name: kube-prometheus-stack
   namespace: argocd
 spec:
-  project: monitoring
+  project: default
   source:
     chart: kube-prometheus-stack
     repoURL: https://github.com/prometheus-community/helm-charts
