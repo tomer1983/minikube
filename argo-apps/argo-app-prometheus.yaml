@@ -6,14 +6,17 @@ metadata:
 spec:
   project: default
   source:
-    chart: kube-prometheus-stack
-    # repoURL: https://github.com/prometheus-community/helm-charts
-    repoURL: https://prometheus-community.github.io/helm-charts
-    targetRevision: 56.21.3
-    helm:
-      releaseName: kube-prometheus-stack
-      # valueFiles:
-      # - monitoring/values-kube-prometheus-stack.yaml  
+    - chart: kube-prometheus-stack
+      # repoURL: https://github.com/prometheus-community/helm-charts
+      repoURL: https://prometheus-community.github.io/helm-charts
+      targetRevision: 56.21.3
+      helm:
+        releaseName: kube-prometheus-stack
+        valueFiles:
+        - $path/monitoring/values-kube-prometheus-stack.yaml  
+    - repoURL: 'https://github.com/tomer1983/minikube.git'
+      targetRevision: head
+      ref: path
   destination:
     server: "https://kubernetes.default.svc"
     namespace: monitoring
