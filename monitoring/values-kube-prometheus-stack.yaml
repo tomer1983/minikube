@@ -1123,6 +1123,10 @@ grafana:
   service:
     portName: http-web
     type: LoadBalancer
+    port: 3000
+    ## To be used with a proxy extraContainer port
+    ##
+    targetPort: 3000    
 
   serviceMonitor:
     # If true, a ServiceMonitor CRD is created for a prometheus operator
