@@ -72,32 +72,32 @@ spec:
         annotations: on-the-namespace
 
     # The retry feature is available since v1.7
-    retry:
-      limit: 5 # number of failed sync attempt retries; unlimited number of attempts if less than 0
-      backoff:
-        duration: 5s # the amount to back off. Default unit is seconds, but could also be a duration (e.g. "2m", "1h")
-        factor: 2 # a factor to multiply the base duration after each failed retry
-        maxDuration: 3m # the maximum amount of time allowed for the backoff strategy
+    # retry:
+    #   limit: 5 # number of failed sync attempt retries; unlimited number of attempts if less than 0
+    #   backoff:
+    #     duration: 5s # the amount to back off. Default unit is seconds, but could also be a duration (e.g. "2m", "1h")
+    #     factor: 2 # a factor to multiply the base duration after each failed retry
+    #     maxDuration: 3m # the maximum amount of time allowed for the backoff strategy
 
   # Will ignore differences between live and desired states during the diff. Note that these configurations are not
   # used during the sync process unless the `RespectIgnoreDifferences=true` sync option is enabled.
-  ignoreDifferences:
-  # for the specified json pointers
-  - group: apps
-    kind: Deployment
-    jsonPointers:
-    - /spec/replicas
-  - kind: ConfigMap
-    jqPathExpressions:
-    - '.data["config.yaml"].auth'
-  # for the specified managedFields managers
-  - group: "*"
-    kind: "*"
-    managedFieldsManagers:
-    - kube-controller-manager
-    # Name and namespace are optional. If specified, they must match exactly, these are not glob patterns.
-    name: my-deployment
-    namespace: my-namespace
+  # ignoreDifferences:
+  # # for the specified json pointers
+  # - group: apps
+  #   kind: Deployment
+  #   jsonPointers:
+  #   - /spec/replicas
+  # - kind: ConfigMap
+  #   jqPathExpressions:
+  #   - '.data["config.yaml"].auth'
+  # # for the specified managedFields managers
+  # - group: "*"
+  #   kind: "*"
+  #   managedFieldsManagers:
+  #   - kube-controller-manager
+  #   # Name and namespace are optional. If specified, they must match exactly, these are not glob patterns.
+  #   name: my-deployment
+  #   namespace: my-namespace
 
   # RevisionHistoryLimit limits the number of items kept in the application's revision history, which is used for
   # informational purposes as well as for rollbacks to previous versions. This should only be changed in exceptional
