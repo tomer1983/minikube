@@ -3,6 +3,8 @@ kind: ServiceMonitor
 metadata:
   name: argocd-redis-haproxy-metrics
   namespace: argocd
+  labels:
+    release: prometheus-operator  
 spec:
   selector:
     matchLabels:
